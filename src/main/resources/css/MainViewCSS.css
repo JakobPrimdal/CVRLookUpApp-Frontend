@@ -1,0 +1,95 @@
+.root-container {
+    -fx-background-color: #e8ecf0;
+}
+
+/*  Top text  */
+#HBoxLogoTitle {
+    -fx-background-color: white;
+    -fx-background-radius: 50;
+}
+
+#lblCVRFinder {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3d5a73;
+    -fx-background-insets: 0;
+}
+
+#lblSubText {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3d5a73;
+}
+
+/*  Search  */
+#HBoxSearch {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+#txtfieldCvrNum {
+    -fx-border-width: 0;
+    -fx-background-color: #e3e7e8;
+    -fx-background-radius: 5;
+    -fx-prompt-text-fill: grey;
+}
+
+#btnSearch {
+    -fx-border-width: 0;
+    -fx-background-color: black;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+}
+
+/*  Center Grid  */
+#VBoxResultBox {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+#lblCompanyName {
+    -fx-text-fill: black;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+#lblCVR {
+    -fx-text-fill: grey;
+    -fx-font-size: 12;
+    /*-fx-font-weight: bold;*/
+}
+
+#lblStatus {
+    -fx-border-width: 0;
+    -fx-background-color: black;
+    -fx-background-radius: 5;
+    -fx-font-size: 10;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.bottomLabels {
+    -fx-text-fill: grey;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+}
+
+
+
+
+/*
+
+    ----- Scroll Pane -----
+
+ */
+
+
+.titled-pane{
+    -fx-font-weight: bold;
+    -fx-background-color: #e8ecf0;
+}
+
+.titled-pane > .title {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+}
