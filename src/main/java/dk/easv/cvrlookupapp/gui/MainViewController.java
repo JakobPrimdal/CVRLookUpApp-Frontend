@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 import java.util.Arrays;
 
@@ -35,7 +37,17 @@ public class MainViewController {
 
     @FXML
     private void handleSearch(ActionEvent actionEvent) {
+        handleSearch();
+    }
 
+    @FXML
+    private void onEnterPressed(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            handleSearch();
+        }
+    }
+
+    private void handleSearch() {
         if (txtfieldCvrNum.getText().isBlank())
             return;
 
@@ -67,6 +79,5 @@ public class MainViewController {
         } catch (Exception e) {
             AlertHelper.showError("Error", "Unable to search this CVR number." + e.getMessage());
         }
-
     }
 }

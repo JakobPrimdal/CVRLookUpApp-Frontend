@@ -16,6 +16,7 @@ public class Launcher extends Application{
         scene.getStylesheets().add(getClass().getResource("/css/MainViewCSS.css").toExternalForm());
         stage.setTitle("CVR LookUp");
         stage.setScene(scene);
+        //stage.setResizable(false);
         stage.show();
     }
 
