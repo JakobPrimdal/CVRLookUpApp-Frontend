@@ -23,7 +23,7 @@ Get an API key
 
 Usage
 
-Launch the application
+* Launch the application
 * Enter a valid Danish CVR number in the search field
 * Click "Search" or press Enter
 * View the company information displayed
@@ -36,7 +36,7 @@ For testing purposes, you can use these real Danish companies:
 54562519 - LEGO A/S
 
 Project Structure
-*The project utilizes a three-layered architecture, allowing it to keep a high level of adaptability for potential future features and improvements.
+* The project utilizes a three-layered architecture, allowing it to keep a high level of adaptability for potential future features and improvements.
 
 All dependencies are managed through Maven and specified in pom.xml.
 
