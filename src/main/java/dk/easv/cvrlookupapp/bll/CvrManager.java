@@ -2,15 +2,15 @@ package dk.easv.cvrlookupapp.bll;
 
 // Project imports
 import dk.easv.cvrlookupapp.be.Cvr;
-import dk.easv.cvrlookupapp.dal.CvrDAO;
-import dk.easv.cvrlookupapp.dal.ICvrDAO;
+import dk.easv.cvrlookupapp.dal.BackendClient;
+import dk.easv.cvrlookupapp.dal.IBackendClient;
 
 public class CvrManager {
 
-    ICvrDAO iCvrDAO = new CvrDAO();
+    IBackendClient iBackendClient = new BackendClient();
 
     public Cvr getCvrByNumber(String cvrNumber) throws Exception {
-        return iCvrDAO.getCvrByNumber(cvrNumber);
+        return iBackendClient.getCvrByNumber(cvrNumber);
     }
 
 }

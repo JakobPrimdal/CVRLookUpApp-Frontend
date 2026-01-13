@@ -9,21 +9,18 @@ import com.google.gson.JsonSyntaxException;
 import dk.easv.cvrlookupapp.be.Cvr;
 
 // Java imports
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Properties;
 
-public class CvrDAO implements ICvrDAO{
-    private static final String BASE_URL = "https://virkdata.dk/api/";
+public class BackendClient implements IBackendClient {
+    private static final String BASE_URL = "http://localhost:8080/api/company/";
     private final HttpClient httpClient;
     private final Gson gson;
 
-    public CvrDAO() {
+    public BackendClient() {
         this.httpClient = HttpClient.newHttpClient();
         // Configure Gson to handle the field name mapping
         this.gson = new GsonBuilder()
@@ -48,14 +45,11 @@ public class CvrDAO implements ICvrDAO{
         }
 
         try {
-            String url = BASE_URL + "?search=" + cvrNumber.trim() + "&country=dk";
+            String url = BASE_URL + cvrNumber.trim();
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
-                    .header("User-Agent", "CvrLookupApp/1.0")
-                    .header("Authorization", getAPIKey())
-                    .GET()
-                    .build();
+                    .GET().build();
 
             HttpResponse<String> response = httpClient.send(
                     request,
@@ -95,19 +89,8 @@ public class CvrDAO implements ICvrDAO{
         }
     }
 
-    private static String getAPIKey() {
-        Properties accessKey = new Properties();
-        try {
-            accessKey.load(new FileInputStream(new File("config/API.key")));
-        } catch (IOException e) {
-            // Display error to user // Throw exception upwards instead
-            throw new RuntimeException("Could not get API_Key");
-        }
-        return accessKey.getProperty("API_Key");
-    }
-
     public static void main(String[] args) {
-        CvrDAO dao = new CvrDAO();
+        BackendClient dao = new BackendClient();
         try {
             System.out.println("Starting CVR lookup...");
             Cvr test = dao.getCvrByNumber("43342878");
