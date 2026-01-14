@@ -1,4 +1,4 @@
-CVR Lookup Application
+CVR Lookup Application - Frontend
 
 * A JavaFX desktop application for looking up publicly available information about Danish companies using their CVR number.
 
