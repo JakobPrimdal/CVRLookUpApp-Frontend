@@ -27,6 +27,7 @@ public class MainViewController {
     @FXML private Label lblPhoneNum;
     @FXML private Label lblEmail;
     @FXML private Label lblFax;
+    @FXML private Label lblWebsite;
     @FXML private Label lblProtected;
     @FXML private Label lblCompanyType;
     @FXML private Label lblIndustryCode;
@@ -85,6 +86,7 @@ public class MainViewController {
             lblPhoneNum.setText("Tlf. nr.: " + company.getPhone());
             lblEmail.setText("Email: " + company.getEmail());
             lblFax.setText("Fax: " + company.getFax());
+            lblWebsite.setText("Website: " + company.getWebsite());
 
             // Company details
             lblProtected.setText("Reklamebeskyttelse: " + company.getProtection());

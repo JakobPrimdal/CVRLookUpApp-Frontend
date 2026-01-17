@@ -130,6 +130,7 @@
                                           <Label fx:id="lblPhoneNum" text="Tlf. nr.:" />
                                           <Label fx:id="lblEmail" text="Email:" />
                                           <Label fx:id="lblFax" text="Fax:" />
+                                          <Label fx:id="lblWebsite" text="Website:" />
                                        </children>
                                     </VBox>
                                  </content>
